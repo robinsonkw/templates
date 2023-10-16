@@ -1,4 +1,10 @@
 # ssh configuration file
+# 
+# INFO
+#
+# if restoring this file from Github or another backup source rename file
+# to  'config' and place in ~/.ssh folder on system
+# The file will not work if not named correctly.
 
 ## global values ##
 
