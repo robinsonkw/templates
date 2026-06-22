@@ -22,8 +22,28 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'                  " Comment toggling shortcut
 Plug 'jiangmiao/auto-pairs'                  " Automatic closing of brackets
 
-call plug#end()
+" Color Themes
+Plug 'arcticicestudio/nord-vim'               " Nord Theme
+Plug 'ghifarit53/tokyonight-vim'              " Tokyo Night Theme
+Plug 'drewtempelmeyer/palenight.vim'           " True Dark Blue Theme
+Plug 'morhetz/gruvbox'                        " Gruvbox Theme
 
+call plug#end()
+" ==============================================================================
+" CORE PREFERENCES & THEMES
+" ==============================================================================
+" Enable True Color support (CRITICAL for modern deep blue themes to look right!)
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+" --- Pick ONE below by deleting the quote mark, comment out the others ---
+colorscheme tokyonight
+" colorscheme nord
+" colorscheme palenight
+" colorscheme gruvbox
+
+syntax enable
 " ==============================================================================
 " CORE PREFERENCES & THEMES (Your Existing Foundational Setup)
 " ==============================================================================
@@ -65,7 +85,9 @@ nnoremap <space> za             " Remaps spacebar to toggle fold
 set foldmethod=syntax
 let javaScript_fold = 1
 let g:javaScript_fold = 1
-
+let g:html_indent_inctags = "html,head,body,div,section,header,footer,nav,ul,ol,li"
+let g:xml_syntax_folding = 1
+autocmd FileType html setlocal foldmethod=indent
 " ==============================================================================
 " COMPONENT TUNING (ALE & Airline Options)
 " ==============================================================================
